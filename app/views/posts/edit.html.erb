@@ -3,20 +3,4 @@
   <p class="lead blog-description">Here you can edit your post.</p>
 </div>
 
-<%= form_for :post, url: post_path(@post), method: :patch do |p| %>
-    
-    <p>
-      <%= p.label :title %><br>
-      <%= p.text_field :title %>
-    </p>
-
-    <p>
-      <%= p.label :body %><br>
-      <%= p.text_area :body %>
-    </p>
-
-    <p>
-      <%= p.submit %>
-    </p>
-
-<% end %>
+<%= render 'form' %>
