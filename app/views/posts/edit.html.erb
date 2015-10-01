@@ -1,9 +1,10 @@
 <div class="blog-header">
-  <h1 class="blog-title">New Post</h1>
-  <p class="lead blog-description">You can create new post here</p>
+  <h1 class="blog-title">Edit post</h1>
+  <p class="lead blog-description">Here you can edit your post.</p>
 </div>
 
-<%= form_for :post, url: posts_path do |p| %>
+<%= form_for :post, url: post_path(@post), method: :patch do |p| %>
+    
     <p>
       <%= p.label :title %><br>
       <%= p.text_field :title %>
@@ -17,4 +18,5 @@
     <p>
       <%= p.submit %>
     </p>
+
 <% end %>

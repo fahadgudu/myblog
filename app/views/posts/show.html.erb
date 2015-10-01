@@ -1,9 +1,9 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="blog-header">
+  <h1 class="blog-title">View post</h1>
+  <p class="lead blog-description">Here you can view your post.</p>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @post.body %>
-</p>
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= @post.title %></h2>
+  <p><%= @post.body %></p>
+</div>

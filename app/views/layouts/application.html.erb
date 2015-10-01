@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <a class="blog-nav-item active" href="<%=posts_path %>">Home</a>
+      <a class="blog-nav-item" href="<%=new_post_path %>">New Post</a>
+    </nav>
+  </div>
+</div>
+<div class="container">
+    <%= yield %>
+</div>
 
-<%= yield %>
-
+<footer class="blog-footer">
+  <p>Blog example created by <a href="http://github.com/profeg">Prof</a></p>
+</footer>
 </body>
 </html>
