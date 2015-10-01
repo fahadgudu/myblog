@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+    <h2 class="blog-post-title"><%= post.title %></h2>
+    <p class="blog-post-meta"><%= post.created_at %>
+      <%= link_to 'View', post_path(post), class: 'btn btn-primary btn-xs' %>
+      <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-primary btn-xs' %>
+      <%= link_to 'Delete', post_path(post),
+                  class: 'btn btn-primary btn-xs',
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </p>
+    <p><%= post.body %></p>
+    <hr>
+<% end %>
