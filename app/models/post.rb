@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
             length: { minimum: 5 }
   has_many :comments, dependent: :destroy
   belongs_to :user
+  mount_uploader :image, ImageUploader
+
 end

@@ -10,6 +10,10 @@ gem 'pg'
 # Use bootstrap sass
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+#we need image upload
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
