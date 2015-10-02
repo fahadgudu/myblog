@@ -4,5 +4,8 @@
 </div>
 
 <div class="blog-post">
-  <%= render 'post' %>
+  <% @posts.each do |post| %>
+      <%@post = post%>
+      <%= render 'post' %>
+  <% end %>
 </div>
