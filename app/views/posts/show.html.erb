@@ -3,7 +3,6 @@
   <p class="lead blog-description">Here you can view your post.</p>
 </div>
 
-<div class="blog-post">
-  <h2 class="blog-post-title"><%= @post.title %></h2>
-  <p><%= @post.body %></p>
-</div>
+<%= render 'post' %>
+<%= render @post.comments %>
+<%= render 'comments/form' %>
