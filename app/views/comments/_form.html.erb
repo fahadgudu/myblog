@@ -1,5 +1,6 @@
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |p| %>
+
     <p>
       <%= p.label :user %><br>
       <%= p.text_field :user %>
