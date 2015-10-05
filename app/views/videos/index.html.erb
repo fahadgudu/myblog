@@ -1,0 +1,11 @@
+<div class="blog-header">
+  <h1 class="blog-title">Listing videos</h1>
+  <p class="lead blog-description">The example of creating a video blog with Rails and Bootstrap.</p>
+</div>
+
+<div class="blog-post">
+  <% @videos.each do |video| %>
+      <%@videos = video%>
+      <%= render 'video' %>
+  <% end %>
+</div>
