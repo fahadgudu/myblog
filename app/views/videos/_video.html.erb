@@ -7,6 +7,6 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
-<%= image_tag @video.image.url if @video.body? %>
+<%= image_tag @video.body.url if @video.body? %>
 <p><%= @video.body %></p>
 <hr>
