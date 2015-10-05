@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151004191116) do
+ActiveRecord::Schema.define(version: 20151005175612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,16 @@ ActiveRecord::Schema.define(version: 20151004191116) do
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "user"
+    t.integer  "video_id"
+    t.integer  "target_id"
+    t.string   "target_type"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["video_id"], name: "index_comments_on_video_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "descroption"
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(version: 20151004191116) do
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "videos"
   add_foreign_key "posts", "users"
   add_foreign_key "videos", "users"
 end

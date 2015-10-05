@@ -1,12 +1,11 @@
 <h2 class="blog-post-title"><%= @video.title %></h2>
 <p class="blog-post-meta"><%= @video.created_at %>
-  <%= link_to 'View', post_path(@video), class: 'btn btn-primary btn-xs' %>
-  <%= link_to 'Edit', edit_post_path(@video), class: 'btn btn-primary btn-xs' %>
-  <%= link_to 'Delete', post_path(@video),
+  <%= link_to 'View', video_path(@video), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Edit', edit_video_path(@video), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Delete', video_path(@video),
               class: 'btn btn-primary btn-xs',
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
-<%= image_tag @video.body.url if @video.body? %>
-<p><%= @video.body %></p>
+<%= video_tag(@video.body.url, size: "160x100", controls: true) if @video.body? %>
 <hr>
