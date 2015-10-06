@@ -1,10 +1,12 @@
 class CreateComments < ActiveRecord::Migration
   def change
-    create_table :comments do |t|
-      t.text :body
-      t.references :post, index: true, foreign_key: true
-
-      t.timestamps null: false
+    create_table "comments", force: :cascade do |t|
+      t.string   "user"
+      t.text     "body"
+      t.datetime "created_at",  null: false
+      t.datetime "updated_at",  null: false
+      t.integer  "target_id"
+      t.string   "target_type"
     end
   end
 end

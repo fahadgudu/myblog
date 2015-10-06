@@ -6,24 +6,21 @@ class CommentsController < ApplicationController
   end
 
   def create
-
     @parent = parent_object
     @comment = @parent.comments.build(comment_params)
-
-    if @comment.valid? and @comment.save
+    if @comment.save
       redirect_to parent_url(@parent)
     else
       render :action => 'new'
     end
-
   end
 
   private
 
   def parent_object
     case
-      when params[:post_id] then Post.find_by_id(params[:post_id])
-      when params[:video_id] then Video.find_by_id(params[:video_id])
+      when params[:post_id] then Post.find(params[:post_id])
+      when params[:video_id] then Video.find(params[:video_id])
     end
   end
 
