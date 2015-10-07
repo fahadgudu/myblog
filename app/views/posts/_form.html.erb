@@ -14,7 +14,10 @@
         </div>
     <% end %>
     <p>
-    <%= p.file_field :image%>
+      <%= p.fields_for :image do |f| %>
+          <%= f.label :image %>
+          <%= f.file_field :data %>
+      <% end %>
     </p>
     <p>
       <%= p.label :title %><br>

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.build_image
   end
 
   def edit
@@ -25,9 +26,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     respond_to do |format|
-      format.html #show.html.erb
+      format.html
       format.json { render json: @post }
       format.xml { render xml: @post }
+      format.pdf do
+        render template: "posts/show_pdf.html.erb",
+               pdf: "post",
+               layout: "pdf.html.erb"
+      end
     end
   end
 
@@ -50,6 +56,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, image_attributes: [:data])
   end
 end
