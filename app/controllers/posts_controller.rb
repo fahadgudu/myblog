@@ -27,12 +27,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       format.html
-      format.json { render json: @post }
-      format.xml { render xml: @post }
       format.pdf do
-        render template: "posts/show_pdf.html.erb",
-               pdf: "post",
-               layout: "pdf.html.erb"
+        pdf = Prawn::Document.new
+        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
       end
     end
   end
