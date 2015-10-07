@@ -13,3 +13,4 @@ log
 tmp
 .idea
 public/uploads
+db/schema.rb
