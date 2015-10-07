@@ -11,6 +11,8 @@
               class: 'btn btn-primary btn-xs',
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'PDF', post_path(:format => 'pdf'), class: 'btn btn-primary btn-xs' %>
+
 </p>
 <%= image_tag @post.image.data_url if @post.image %>
 <p><%= @post.body %></p>

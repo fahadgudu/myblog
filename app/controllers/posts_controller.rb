@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = Prawn::Document.new
+        pdf = ReportPdf.new(@post)
         send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
       end
     end
