@@ -14,7 +14,10 @@
         </div>
     <% end %>
     <p>
-      <%= p.file_field :body%>
+      <%= p.fields_for :video_attach do |f| %>
+          <%= f.label :video_attach %>
+          <%= f.file_field :data %>
+      <% end %>
     </p>
     <p>
       <%= p.label :title %><br>

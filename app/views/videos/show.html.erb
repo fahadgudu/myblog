@@ -3,7 +3,16 @@
   <p class="lead blog-description">Here you can view your video post.</p>
 </div>
 
-<%= render 'videos/video' %>
+<h2 class="blog-post-title"><%= @video.title %></h2>
+<p class="blog-post-meta"><%= @video.created_at %>
+  <%= link_to 'View', video_path(@video), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Edit', edit_video_path(@video), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Delete', video_path(@video),
+              class: 'btn btn-primary btn-xs',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
+<%= video_tag(@video.video_attach.url, size: "160x100", controls: true) if @video.video_attach %>
+<hr>
 <%= render @video.comments %>
-<% @blog_item = @video %>
-<%= render 'comments/form' %>
+<%= render partial: 'comments/form', object: @video, as: 'item' %>

@@ -5,6 +5,7 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
+    @video.build_video_attach
   end
 
   def edit
@@ -24,7 +25,7 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     respond_to do |format|
-      format.html #show.html.erb
+      format.html
       format.json { render json: @video }
       format.xml { render xml: @video }
     end
@@ -49,7 +50,7 @@ class VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:title, :body)
+    params.require(:video).permit(:title, :body,  video_attach_attributes: [:data])
   end
 
 end
