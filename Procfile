@@ -1,0 +1,1 @@
+web: bundle exec myblog -C config/application.rb
