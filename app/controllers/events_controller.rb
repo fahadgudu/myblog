@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @event.build_image_attach
+    @event.build_file_attach
   end
 
   def edit
@@ -53,6 +53,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :body, image_attributes: [:data])
+    params.require(:event).permit(:title, :body, file_attributes: [:data])
   end
 end

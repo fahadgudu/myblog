@@ -1,0 +1,21 @@
+<div class="blog-header">
+  <h1 class="blog-title">View event</h1>
+  <p class="lead blog-description">Here you can view your event.</p>
+</div>
+
+<h2 class="blog-event-title"><%= @event.title %></h2>
+<p class="blog-event-meta"><%= @event.created_at %>
+  <%= link_to 'View', event_path(@event), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Delete', event_path(@event),
+              class: 'btn btn-primary btn-xs',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'PDF', event_path(:format => 'pdf'), class: 'btn btn-primary btn-xs' %>
+
+</p>
+<%= file_tag @event.file.data_url if @event.file %>
+<p><%= @event.body %></p>
+<hr>
+<%= render @event.comments %>
+<%= render partial: 'comments/form', object: @event, as: 'item' %>

@@ -1,0 +1,12 @@
+<h2 class="blog-event-title"><%= event.title %></h2>
+<p class="blog-event-meta"><%= event.created_at %>
+  <%= link_to 'View', event_path(event), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-primary btn-xs' %>
+  <%= link_to 'Delete', event_path(event),
+              class: 'btn btn-primary btn-xs',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
+<%= file_tag event.file.data_url if event.file %> //TODO edit this and the same in posts
+<p><%= event.body %></p>
+<hr>
