@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.build_image
+    @post.build_image_attach
   end
 
   def edit
