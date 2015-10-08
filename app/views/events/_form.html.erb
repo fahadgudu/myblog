@@ -14,8 +14,8 @@
         </div>
     <% end %>
     <p>
-      <%= p.fields_for :file do |f| %>
-          <%= f.label :file %>
+      <%= p.fields_for :file_attach do |f| %>
+          <%= f.label :file_attach %>
           <%= f.file_field :data %>
       <% end %>
     </p>

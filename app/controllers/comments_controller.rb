@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
     case
       when params[:post_id] then Post.find(params[:post_id])
       when params[:video_id] then Video.find(params[:video_id])
+      when params[:event_id] then Event.find(params[:event_id])
     end
   end
 
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
     case
       when params[:post_id] then post_url(parent)
       when params[:video_id] then video_url(parent)
+      when params[:event_id] then event_url(parent)
     end
   end
 

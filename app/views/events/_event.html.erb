@@ -7,6 +7,6 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
-<%= file_tag event.file.data_url if event.file %> //TODO edit this and the same in posts
+<%= link_to 'File attach', event.file_attach.data_url if event.file_attach %>
 <p><%= event.body %></p>
 <hr>

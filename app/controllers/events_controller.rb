@@ -53,6 +53,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :body, file_attributes: [:data])
+    params.require(:event).permit(:title, :body, file_attach_attributes: [:data])
   end
 end

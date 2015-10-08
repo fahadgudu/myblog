@@ -14,7 +14,7 @@
   <%= link_to 'PDF', event_path(:format => 'pdf'), class: 'btn btn-primary btn-xs' %>
 
 </p>
-<%= file_tag @event.file.data_url if @event.file %>
+<%= link_to 'File attach', @event.file_attach.data_url if @event.file_attach %>
 <p><%= @event.body %></p>
 <hr>
 <%= render @event.comments %>
