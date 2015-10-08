@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'bootstrap-sass'
@@ -8,7 +7,6 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'prawn'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
@@ -22,16 +20,15 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
 group :test do
-  gem 'faker'
-  gem 'capybara'
-  gem 'guard-rspec'
-  gem 'launchy'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'database_cleaner'
 end

@@ -5,7 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-image "#{Rails.root}/app/assets/images/index.jpeg"
 
 42.times do
   title = 'Doom forever!'
