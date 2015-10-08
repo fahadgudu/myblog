@@ -7,6 +7,6 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
-<%= image_tag post.image.data_url if post.image %>
+<%= image_tag post.image_attach.data_url if post.image_attach %>
 <p><%= post.body %></p>
 <hr>

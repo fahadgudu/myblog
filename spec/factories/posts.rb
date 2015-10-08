@@ -12,7 +12,7 @@ FactoryGirl.define do
     end
 
     factory :image do
-      file File.open(File.join(Rails.root, '/test/fixtures/files/index.jpeg'))
+      file File.open(File.join(Rails.root, '/spec/fixtures/files/index.jpeg'))
     end
   end
 

@@ -14,7 +14,7 @@
   <%= link_to 'PDF', post_path(:format => 'pdf'), class: 'btn btn-primary btn-xs' %>
 
 </p>
-<%= image_tag @post.image.data_url if @post.image %>
+<%= image_tag @post.image_attach.data_url if @post.image_attach %>
 <p><%= @post.body %></p>
 <hr>
 <%= render @post.comments %>
